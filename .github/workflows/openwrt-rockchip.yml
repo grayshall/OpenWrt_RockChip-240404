@@ -27,17 +27,16 @@ env:
 
 jobs:
   Build:
-   runs-on: ubuntu-latest
-  
-  outputs:
-      OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
-      PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
-      TARGET: ${{ steps.compile.outputs.TARGET }}
-      SUBTARGET: ${{ steps.compile.outputs.SUBTARGET }}
-      FIRMWARE: ${{ steps.compile.outputs.FIRMWARE }}
+     runs-on: ubuntu-latest
+     outputs:
+       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
+       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
+       TARGET: ${{ steps.compile.outputs.TARGET }}
+       SUBTARGET: ${{ steps.compile.outputs.SUBTARGET }}
+       FIRMWARE: ${{ steps.compile.outputs.FIRMWARE }}
       GENERATE_STATUS: ${{ steps.generate.outputs.GENERATE_STATUS }}
 
-    steps:
+     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
